@@ -6,6 +6,7 @@ import UserContext from './UsersContext';
 
 function Editusers(props) {
     const { userData, setUserData } = useContext(UserContext);
+    console.log(props)
 
     const user = userData[props.match.params.id - 1]
 

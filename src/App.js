@@ -25,17 +25,40 @@ function App() {
         <div className="content">
           <Topbar />
           <Switch>
-            <UserProvider>
-              <Route path="/users" component={Users} exact />
-              <Route path="/createuser" component={CreateUser} exact />
-              <Route path="/users/edit/:id" component={Editusers} exact />
+
+            <Route path="/users" exact >
+              <UserProvider>
+                <Users />
+              </UserProvider>
+            </Route>
+            <Route path="/createuser" exact >
+              <UserProvider>
+                <CreateUser />
+              </UserProvider>
+            </Route>
+            {/* <Route path="/users/edit/:id" exact >
+              <UserProvider>
+                <Editusers />
+              </UserProvider>
+            </Route> */}
+
+            <Route path="/products" exact >
               <ProductProvider>
-                <Route path="/products" component={Products} exact />
-                <Route path="/createproducts" component={CreateProducts} exact />
-                <Route path="/products/edit/:id" component={Editproducts} exact />
+                <Products />
               </ProductProvider>
-              <Route path="/" component={Dashboard} exact />
-            </UserProvider>
+            </Route>
+            <Route path="/createproducts" exact >
+              <ProductProvider>
+                <CreateProducts />
+              </ProductProvider>
+            </Route>
+            {/* <Route path="/products/edit/:id" component={Editproducts} exact >
+              <ProductProvider>
+                <Editproducts />
+              </ProductProvider>
+            </Route> */}
+            <Route path="/" component={Dashboard} exact />
+
           </Switch>
         </div>
       </div>
