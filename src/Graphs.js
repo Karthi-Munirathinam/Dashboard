@@ -60,7 +60,7 @@ function Graphs() {
         { name: "Social", value: 30 }
     ];
     const COLORS = ["#4e73df", "#36b9cc", "#1cc88a"];
-    let flag = false;
+    // let flag = false;
     function CustomTooltip({ payload, label, active }) {
         if (active) {
             return (
@@ -77,13 +77,13 @@ function Graphs() {
 
     return (
         <>
-            <div class="col-xl-8 col-lg-7">
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+            <div className="col-xl-8 col-lg-7">
+                <div className="card shadow mb-4">
+                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 className="m-0 font-weight-bold text-primary">Earnings Overview</h6>
                     </div>
-                    <div class="card-body">
-                        <div class="chart-area" style={{ width: "100%", height: 350 }}>
+                    <div className="card-body">
+                        <div className="chart-area" style={{ width: "100%", height: 350 }}>
                             <ResponsiveContainer >
                                 <AreaChart
                                     data={data}
@@ -104,14 +104,14 @@ function Graphs() {
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-5">
-                <div class="card shadow mb-4">
+            <div className="col-xl-4 col-lg-5">
+                <div className="card shadow mb-4">
 
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 className="m-0 font-weight-bold text-primary">Revenue Sources</h6>
                     </div>
 
-                    <div class="card-body" style={{ width: "100%" }}>
+                    <div className="card-body" style={{ width: "100%" }}>
 
                         <ResponsiveContainer height={307}>
                             <PieChart >
@@ -131,15 +131,15 @@ function Graphs() {
                                 </Pie>
                             </PieChart>
                         </ResponsiveContainer>
-                        <div class="mt-4 text-center small">
-                            <span class="mr-2">
-                                <i class="fas fa-circle text-primary"></i> Direct
+                        <div className="mt-4 text-center small">
+                            <span className="mr-2">
+                                <i className="fas fa-circle text-primary"></i> Direct
                             </span>
-                            <span class="mr-2">
-                                <i class="fas fa-circle text-success"></i> Social
+                            <span className="mr-2">
+                                <i className="fas fa-circle text-success"></i> Social
                             </span>
-                            <span class="mr-2">
-                                <i class="fas fa-circle text-info"></i> Referral
+                            <span className="mr-2">
+                                <i className="fas fa-circle text-info"></i> Referral
                             </span>
                         </div>
                     </div>

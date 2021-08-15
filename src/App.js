@@ -26,16 +26,20 @@ function App() {
           <Topbar />
           <Switch>
             <UserProvider>
-              <ProductProvider>
-                <Route path="/users" component={Users} exact />
-                <Route path="/createuser" component={CreateUser} exact />
-                <Route path="/users/edit/:id" component={Editusers} exact />
-                <Route path="/products" component={Products} exact />
-                <Route path="/createproducts" component={CreateProducts} exact />
-                <Route path="/products/edit/:id" component={Editproducts} exact />
-                <Route path="/" component={Dashboard} exact />
-              </ProductProvider>
+              <Route path="/users" component={Users} exact />
+              <Route path="/createuser" component={CreateUser} exact />
+              <Route path="/users/edit/:id" component={Editusers} exact />
             </UserProvider>
+          </Switch>
+          <Switch>
+            <ProductProvider>
+              <Route path="/products" component={Products} exact />
+              <Route path="/createproducts" component={CreateProducts} exact />
+              <Route path="/products/edit/:id" component={Editproducts} exact />
+            </ProductProvider>
+          </Switch>
+          <Switch>
+            <Route path="/" component={Dashboard} exact />
           </Switch>
         </div>
       </div>

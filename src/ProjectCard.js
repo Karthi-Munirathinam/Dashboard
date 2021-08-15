@@ -70,24 +70,24 @@ function ProjectCard() {
     ]
     return (
         <>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+            <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                    <h6 className="m-0 font-weight-bold text-primary">Projects</h6>
                 </div>
-                <div class="card-body">
-                    {projectData.map((obj) => {
-                        return <Project data={obj} />
+                <div className="card-body">
+                    {projectData.map((obj, index) => {
+                        return <Project key={index} data={obj} />
                     })}
 
                 </div>
             </div>
 
-            <div class="row">
-                {Colors.map(obj => {
-                    return <ColorBox data={obj} />
+            <div className="row">
+                {Colors.map((obj, index) => {
+                    return <ColorBox key={index} data={obj} />
                 })}
             </div>
-            
+
         </>
     )
 }
@@ -98,10 +98,10 @@ export default ProjectCard
 function Project({ data }) {
     return (
         <>
-            <h4 class="small font-weight-bold">{data.title}<span
-                class="float-right">{data.status}</span></h4>
-            <div class="progress mb-4">
-                <div class="progress-bar" role="progressbar" style={{ width: `${data.value}%`, backgroundColor: data.color }}
+            <h4 className="small font-weight-bold">{data.title}<span
+                className="float-right">{data.status}</span></h4>
+            <div className="progress mb-4">
+                <div className="progress-bar" role="progressbar" style={{ width: `${data.value}%`, backgroundColor: data.color }}
                     aria-valuenow={data.value} aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </>
@@ -111,11 +111,11 @@ function Project({ data }) {
 
 function ColorBox({ data }) {
     return (<>
-        <div class="col-lg-6 mb-4">
-            <div class={`card shadow ${data.name === "Light" ? 'text-black' : "text-white"}`} style={{ backgroundColor: data.color }}>
-                <div class="card-body">
+        <div className="col-lg-6 mb-4">
+            <div className={`card shadow ${data.name === "Light" ? 'text-black' : "text-white"}`} style={{ backgroundColor: data.color }}>
+                <div className="card-body">
                     {data.name}
-                    <div class={`${data.name === "Light" ? 'text-black-50' : 'text-white-50'} small`}>{data.color}</div>
+                    <div className={`${data.name === "Light" ? 'text-black-50' : 'text-white-50'} small`}>{data.color}</div>
                 </div>
             </div>
         </div>

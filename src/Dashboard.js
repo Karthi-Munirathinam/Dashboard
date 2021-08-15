@@ -34,22 +34,22 @@ function Dashboard() {
     ]
     return (
         <div className="container-fluid">
-            <h3 class="page-title mb-4">Dashboard</h3>
+            <h3 className="page-title mb-4">Dashboard</h3>
             <div className="row">
                 {
-                    data.map((obj) => {
-                        return <DashboardCard data={obj} />
+                    data.map((obj, index) => {
+                        return <DashboardCard key={index} data={obj} />
                     })
                 }
             </div>
             <div className="row">
                 <Graphs />
             </div>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
+            <div className="row">
+                <div className="col-lg-6 mb-4">
                     <ProjectCard />
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div className="col-lg-6 mb-4">
                     <Illustrations />
                 </div>
             </div>
