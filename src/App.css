@@ -365,3 +365,20 @@ body.sidebar-toggled footer.sticky-footer {
 .small {
   font-size: 0.75rem;
 }
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+}
+.submitbtn {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.top-container {
+  justify-content: space-between;
+}
