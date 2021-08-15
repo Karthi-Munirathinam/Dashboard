@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/*"
-  to = "/"
+  from = "/users"
+  to = "/users"
   status = 301
-  force = true
+  force = false
   
