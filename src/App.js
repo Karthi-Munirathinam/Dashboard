@@ -25,15 +25,15 @@ function App() {
         <div className="content">
           <Topbar />
           <Switch>
-            <Route path="/" component={Dashboard} exact={true} />
             <UserProvider>
-              <Route path="/users" component={Users} exact={true} />
-              <Route path="/createuser" component={CreateUser} exact={true} />
-              <Route path="/users/edit/:id" component={Editusers} exact={true} />
               <ProductProvider>
-                <Route path="/products" component={Products} exact={true} />
-                <Route path="/createproducts" component={CreateProducts} exact={true} />
-                <Route path="/products/edit/:id" component={Editproducts} exact={true} />
+                <Route path="/" component={Dashboard} exact />
+                <Route path="/users" component={Users} exact />
+                <Route path="/createuser" component={CreateUser} exact />
+                <Route path="/users/edit/:id" component={Editusers} exact />
+                <Route path="/products" component={Products} exact />
+                <Route path="/createproducts" component={CreateProducts} exact />
+                <Route path="/products/edit/:id" component={Editproducts} exact />
               </ProductProvider>
             </UserProvider>
           </Switch>
