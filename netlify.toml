@@ -1,6 +1,3 @@
-[[redirects]]
-  from = "/users"
-  to = "/users"
-  status = 301
-  force = false
-  
+[[edge_handlers]]
+path = "/users"
+handler = "Users"
