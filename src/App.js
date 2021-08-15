@@ -26,16 +26,7 @@ function App() {
           <Topbar />
           <Switch>
 
-            <Route path="/users" exact >
-              <UserProvider>
-                <Users />
-              </UserProvider>
-            </Route>
-            <Route path="/createuser" exact >
-              <UserProvider>
-                <CreateUser />
-              </UserProvider>
-            </Route>
+
             {/* <Route path="/users/edit/:id" exact >
               <UserProvider>
                 <Editusers />
@@ -58,6 +49,16 @@ function App() {
               </ProductProvider>
             </Route> */}
             <Route path="/" component={Dashboard} exact />
+            <Route path="/users" exact >
+              <UserProvider>
+                <Users />
+              </UserProvider>
+            </Route>
+            <Route path="/createuser" exact >
+              <UserProvider>
+                <CreateUser />
+              </UserProvider>
+            </Route>
 
           </Switch>
         </div>
