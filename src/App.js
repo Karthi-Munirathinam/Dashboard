@@ -36,11 +36,6 @@ function App() {
                 <CreateUser />
               </UserProvider>
             </Route>
-            <Route path="/users/edit/:id" exact >
-              <UserProvider>
-                <Editusers />
-              </UserProvider>
-            </Route>
 
             <Route path="/products" exact >
               <ProductProvider>
@@ -52,13 +47,18 @@ function App() {
                 <CreateProducts />
               </ProductProvider>
             </Route>
-            <Route path="/products/edit/:id" exact >
-              <ProductProvider>
-                <Editproducts />
-              </ProductProvider>
-            </Route>
             <Route path="/" component={Dashboard} exact />
+            <>
+              <UserProvider>
+                <Route path="/users/edit/:id" component={Editusers}>
+                </Route>
+              </UserProvider>
 
+              <ProductProvider>
+                <Route path="/products/edit/:id" component={Editproducts} >
+                </Route>
+              </ProductProvider>
+            </>
           </Switch>
         </div>
       </div>
