@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { useState } from 'react/cjs/react.development';
 import UserContext from './UsersContext';
 
 function CreateUser() {

@@ -32,26 +32,25 @@ function App() {
               </UserProvider>
             </Route>
 
-
-
             <Route path="/products" exact >
               <ProductProvider>
                 <Products />
               </ProductProvider>
             </Route>
 
+            <Route path="/" component={Dashboard} exact />
+
             <Route path="/createuser" exact >
               <UserProvider>
                 <CreateUser />
               </UserProvider>
             </Route>
+
             <Route path="/createproducts" exact >
               <ProductProvider>
                 <CreateProducts />
               </ProductProvider>
             </Route>
-
-            <Route path="/" component={Dashboard} exact />
 
             <>
               <UserProvider>
