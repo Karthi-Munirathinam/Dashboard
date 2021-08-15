@@ -1,6 +1,8 @@
 import React from 'react'
 import DashboardCard from './DashboardCard'
 import Graphs from './Graphs'
+import Illustrations from './Illustrations'
+import ProjectCard from './ProjectCard'
 
 function Dashboard() {
     const data = [
@@ -42,6 +44,14 @@ function Dashboard() {
             </div>
             <div className="row">
                 <Graphs />
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <ProjectCard />
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <Illustrations />
+                </div>
             </div>
         </div>
     )

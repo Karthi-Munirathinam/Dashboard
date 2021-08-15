@@ -1,5 +1,5 @@
 import React from 'react';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 function Graphs() {
     let data = [
@@ -49,10 +49,30 @@ function Graphs() {
         },
         {
             month: 'Dec',
-            Earnings: 40000,
+            Earnings: 35000,
         }
 
     ];
+
+    const pieData = [
+        { name: "Direct", value: 55 },
+        { name: "Referral", value: 15 },
+        { name: "Social", value: 30 }
+    ];
+    const COLORS = ["#4e73df", "#36b9cc", "#1cc88a"];
+    let flag = false;
+    function CustomTooltip({ payload, label, active }) {
+        if (active) {
+            return (
+                <div className="custom-tooltip">
+                    <p className="label">{`${label}`}</p>
+                    <p className="desc">{`Earnings: $${payload[0].value} `}</p>
+                </div>
+            );
+        }
+
+        return null;
+    }
 
 
     return (
@@ -63,8 +83,8 @@ function Graphs() {
                         <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
                     </div>
                     <div class="card-body">
-                        <div class="chart-area">
-                            <ResponsiveContainer width="100%" height={350}>
+                        <div class="chart-area" style={{ width: "100%", height: 350 }}>
+                            <ResponsiveContainer >
                                 <AreaChart
                                     data={data}
                                     margin={{
@@ -76,7 +96,7 @@ function Graphs() {
                                 >
                                     <XAxis dataKey="month" />
                                     <YAxis />
-                                    <Tooltip />
+                                    <Tooltip content={<CustomTooltip />} />
                                     <Area type="monotone" dataKey="Earnings" stroke="#8884d8" strokeWidth={3} activeDot={{ r: 8 }} fill="#f6f8fd" />
                                 </AreaChart>
                             </ResponsiveContainer>
@@ -84,17 +104,33 @@ function Graphs() {
                     </div>
                 </div>
             </div>
-            {/* <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-4 col-lg-5">
                 <div class="card shadow mb-4">
 
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
                     </div>
 
-                    <div class="card-body">
-                        <div class="chart-pie pt-4 pb-2">
-                            <canvas id="myPieChart"></canvas>
-                        </div>
+                    <div class="card-body" style={{ width: "100%" }}>
+
+                        <ResponsiveContainer height={307}>
+                            <PieChart >
+                                <Pie
+                                    data={pieData}
+                                    cx={"50%"}
+                                    cy={"50%"}
+                                    innerRadius={100}
+                                    outerRadius={120}
+                                    fill="#8884d8"
+                                    paddingAngle={1}
+                                    dataKey="value"
+                                >
+                                    {data.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                    ))}
+                                </Pie>
+                            </PieChart>
+                        </ResponsiveContainer>
                         <div class="mt-4 text-center small">
                             <span class="mr-2">
                                 <i class="fas fa-circle text-primary"></i> Direct
@@ -108,7 +144,7 @@ function Graphs() {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
         </>
 
