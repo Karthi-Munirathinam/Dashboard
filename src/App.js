@@ -26,12 +26,21 @@ function App() {
           <Topbar />
           <Switch>
 
-
-            {/* <Route path="/users/edit/:id" exact >
+            <Route path="/users" exact >
+              <UserProvider>
+                <Users />
+              </UserProvider>
+            </Route>
+            <Route path="/createuser" exact >
+              <UserProvider>
+                <CreateUser />
+              </UserProvider>
+            </Route>
+            <Route path="/users/edit/:id" exact >
               <UserProvider>
                 <Editusers />
               </UserProvider>
-            </Route> */}
+            </Route>
 
             <Route path="/products" exact >
               <ProductProvider>
@@ -43,22 +52,12 @@ function App() {
                 <CreateProducts />
               </ProductProvider>
             </Route>
-            {/* <Route path="/products/edit/:id" component={Editproducts} exact >
+            <Route path="/products/edit/:id" exact >
               <ProductProvider>
                 <Editproducts />
               </ProductProvider>
-            </Route> */}
+            </Route>
             <Route path="/" component={Dashboard} exact />
-            <Route path="/users" exact >
-              <UserProvider>
-                <Users />
-              </UserProvider>
-            </Route>
-            <Route path="/createuser" exact >
-              <UserProvider>
-                <CreateUser />
-              </UserProvider>
-            </Route>
 
           </Switch>
         </div>
